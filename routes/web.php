@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::prefix('quanly_sanpham')->group(function(){
+	Route::name('quanly_sanpham.')->group(function(){
+       	Route::get('/','QuanLySanPhamController@index')->name('danh-sach');
+	});
+});

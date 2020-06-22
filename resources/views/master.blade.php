@@ -290,14 +290,14 @@
 				                        </a>                        
 				                    </li>
 				                    <li class="nav-parent">
-				                        <a class="nav-link" href="#">
+				                        <a class="nav-link" href="{{ route('quanly_sanpham.danh-sach') }}">
 				                            <i class="fas fa-copy" aria-hidden="true"></i>
-				                            <span>Pages</span>
+				                            <span>Quản lý sản phẩm</span>
 				                        </a>
 				                        <ul class="nav nav-children">
 				                            <li>
 				                                <a class="nav-link" href="pages-signup.html">
-				                                    Sign Up
+				                                    Danh sách sản phẩm
 				                                </a>
 				                            </li>
 				                         

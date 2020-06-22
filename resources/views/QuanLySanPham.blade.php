@@ -1,5 +1,5 @@
-@extends('mater')
+@extends('master')
  @section('main-content')
-  sasdas
+  Day la Trang Quan Ly San Pham
                     
  @endsection
