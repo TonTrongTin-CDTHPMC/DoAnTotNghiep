@@ -39,6 +39,10 @@
 
 		<!-- Head Libs -->
 		<script src=" {{ asset('assets/vendor/modernizr/modernizr.js') }}"></script>
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.css') }}" />
+		<link rel="stylesheet" href="{{ asset('assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('assets/vendor/datatables/media/css/dataTables.bootstrap4.css') }}" />
 
 	</head>
 	<body>
@@ -284,19 +288,19 @@
 				            
 				                <ul class="nav nav-main">
 				                    <li class="nav-active">
-				                        <a class="nav-link" href="layouts-default.html">
+				                        <a class="nav-link" href="{{ route('trang-chu') }}">
 				                            <i class="fas fa-home" aria-hidden="true"></i>
 				                            <span>Dashboard</span>
 				                        </a>                        
 				                    </li>
 				                    <li class="nav-parent">
-				                        <a class="nav-link" href="{{ route('quanly_sanpham.danh-sach') }}">
+				                        <a class="nav-link" href="#">
 				                            <i class="fas fa-copy" aria-hidden="true"></i>
 				                            <span>Quản lý sản phẩm</span>
 				                        </a>
 				                        <ul class="nav nav-children">
 				                            <li>
-				                                <a class="nav-link" href="pages-signup.html">
+				                                <a class="nav-link" href="{{ route('quanly_sanpham.danh-sach') }}">
 				                                    Danh sách sản phẩm
 				                                </a>
 				                            </li>
@@ -333,8 +337,9 @@
 				
 				</aside>
 				<!-- end: sidebar -->
+			<section role="main" class="content-body pb-0">	
            @yield('main-content')
-				
+			</section>	
 			</div>
 
 			<aside id="sidebar-right" class="sidebar-right">
@@ -422,6 +427,18 @@
 		<script src=" {{ asset('assets/vendor/owl.carousel/owl.carousel.js') }}"></script>
 		<script src=" {{ asset('assets/vendor/isotope/isotope.js') }}"></script>
 		
+
+	   <!-- Specific Page Vendor Table -->
+		<script src="{{asset('assets/vendor/select2/js/select2.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/media/js/dataTables.bootstrap4.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/Buttons-1.4.2/js/dataTables.buttons.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.bootstrap4.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.html5.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.print.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/JSZip-2.5.0/jszip.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/pdfmake-0.1.32/pdfmake.min.js') }}"></script>
+		<script src="{{asset('assets/vendor/datatables/extras/TableTools/pdfmake-0.1.32/vfs_fonts.js') }}"></script>
 		<!-- Theme Base, Components and Settings -->
 		<script src=" {{ asset('assets/js/theme.js') }}"></script>
 		

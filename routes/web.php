@@ -13,9 +13,12 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('trang-chu');
 Route::prefix('quanly_sanpham')->group(function(){
 	Route::name('quanly_sanpham.')->group(function(){
-       	Route::get('/','QuanLySanPhamController@index')->name('danh-sach');
+       	Route::get('/','api\APISanPhamController@index')->name('danh-sach');
+       	Route::get('/formthemsp','api\APISanPhamController@create')->name('form-them-sp');
+       	Route::post('/themsp_ok','api\APISanPhamController@store')->name('themsp_ok');
 	});
+	
 });
