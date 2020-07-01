@@ -22,3 +22,15 @@ Route::prefix('quanly_sanpham')->group(function(){
 	});
 	
 });
+
+
+
+
+Route::prefix('insertDB')->group(function(){
+	Route::name('insertDB.')->group(function(){
+       	Route::get('/get','api\APIInsertDBController@LayThuongHieu')->name('danh-sach-thuong-hieu');
+       	Route::get('/','api\APIInsertDBController@LayCategoryTree')->name('danh-sach-categorytree');
+       	
+	});
+	
+});

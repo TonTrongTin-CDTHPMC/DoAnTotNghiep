@@ -5,7 +5,8 @@ namespace App\Http\Controllers\api;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-
+use App\Brand;
+use Illuminate\Support\Facades\DB;
 use App\LazadaRequest\LazopClient;
 use App\LazadaRequest\LazopRequest;
 use App\Http\Requests\KiemTraTaoSanPhamRequest;
@@ -25,7 +26,7 @@ class APISanPhamController extends Controller
        $stringketnoi= new LazopClient('https://api.lazada.vn/rest','120411','LCW7Yof4L6ewYY1TXAEt6zogbGiJ8VMe');
        $request = new  LazopRequest('/products/get',$httpMethod = 'GET');/*đường dẫn api*/
        $request->addApiParam('filter','all');
-       $api= $stringketnoi->execute($request,'50000301135yGmaZ0F1lHsBSoH6fiP8ptyfnhLIwivxEDxB1a6247e1oQd1AGPto');
+       $api= $stringketnoi->execute($request,'50000300429ywkabrulzgklOvRPdgYkyemshvqEXg19108bc5fu8LswcHg12GDyu');
       
        return view('QuanLySanPham')->with('api', json_decode($api, true));
     
@@ -38,7 +39,8 @@ class APISanPhamController extends Controller
      */
     public function create()
     {
-        return view('ThemSanPham');
+        $brand =DB::table('brand')->get();
+        return view('ThemSanPham',compact('brand'));
     }
 
     /**

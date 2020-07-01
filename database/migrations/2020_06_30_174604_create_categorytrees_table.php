@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSanphamsTable extends Migration
+class CreateCategorytreesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateSanphamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sanphams', function (Blueprint $table) {
+        Schema::create('categorytree', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->boolean('leaf');
+            $table->integer('category_id')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +30,6 @@ class CreateSanphamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sanphams');
+        Schema::dropIfExists('categorytree');
     }
 }

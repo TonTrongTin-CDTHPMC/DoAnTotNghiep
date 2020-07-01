@@ -1,4 +1,4 @@
-@extends('master')
+@extends('MasterPage')
  @section('main-content')
   	<!-- start: page -->
 					<section class="call-to-action call-to-action-primary call-to-action-top mb-4">

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('MasterPage')
 @section('main-content')
 @if (count($errors)>0)
       @foreach ($errors->all() as $error)
@@ -50,8 +50,15 @@
 						
 											<div class="form-group row">
 												<label class="col-lg-3 control-label text-lg-right pt-2" for="inputReadOnly">Thương Hiệu</label>
+
 												<div class="col-lg-6">
-													<input type="text" value="Remark" id="inputReadOnly" class="form-control" readonly="readonly" name="brand">
+													<select class="form-control" id="linh_vuc_id" name="brand">
+                                                    @foreach($brand as $brand)                                                        <option value="{{$brand->brand_id}}">
+                                                            {{$brand->name}}
+                                                        </option>
+
+                                                    @endforeach
+                                                </select>
 												</div>
 											</div>
 
@@ -119,19 +126,16 @@
 													<input type="text" class="form-control" id="inputDefault" name="package_weight">
 												</div>
 											</div>
-												<div class="form-group row">
-												<label class="col-lg-3 control-label text-lg-right pt-2" for="inputDefault">
-													Thông tin hộp đựng
-												</label>
-												<div class="col-lg-6">
-													<input type="text" class="form-control" id="inputDefault" name="package_content">
-												</div>
+											
+											
+									<footer class="card-footer">
+										<div class="row justify-content-end">
+											<div class="col-sm-9">
+												<button class="btn btn-primary" type="submit">Submit</button>
+												<button type="reset" class="btn btn-default">Reset</button>
 											</div>
-											<div class="form-group row">
-												
-												<button type="submit" class="col-lg-2 control-label text-lg-right pt-2" id="addToTable" class="btn btn-primary">Thêm sản phẩm <i class="fas fa-plus"></i></button>
-											</div>
-						
+										</div>
+									</footer>
 						
 										
 						                    
